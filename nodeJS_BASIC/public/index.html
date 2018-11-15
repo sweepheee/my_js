@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/products" method="get">
+		<fieldset>
+			<legend>GET</legend>
+			<input type="submit">
+		</fieldset>
+	</form>
+	<form action="/products" method="post">
+		<fieldset>
+			<legend>POST</legend>
+			<input name="name">
+			<input name="price">
+			<input type="submit">
+		</fieldset>
+	</form>
+	<script>
+		var request = new XMLHttpRequest();
+		request.onreadystatechange = function (event) {
+			if(request.readyState == 4) {
+				if(request.status == 200) {
+					var xml = request.responseXML;
+					
+					var names = xml.getElementsByTagName("name");
+					var prices = xml.getElementsByTagName("price");
+					
+					for (var i = 0; i<names.length; i++) {
+						var name = names[i].childNodes[0].nodeValue;
+						var price = prices[i].childNodes[0].nodeValue;
+						document.body.innerHTML += "<h1>" + name + "</h1>";
+						document.body.innerHTML += "<h2>" + price + "</h2>";
+					}
+				}
+			}
+		};
+		
+		request.open('GET', '/data.xml', true);
+		
+		var prevDate = new Date();
+		request.send();
+		var nowDate = new Date();
+		
+		
+		alert(request.responseText);	
+	</script>
+	
+<script>
+window.onload = function() {
+	document.getElementById("get").onclick = function() {
+		var request = new XMLHttpRequest();
+		request.open("GET", "/products", true);
+		request.send();
+		request.onreadystatechange = function(event) {
+			if(request.readyState == 4) {
+				if(request.status == 200) {
+					document.getElementById("output").value = request.responseText;
+				}
+			}
+		}
+	};
+	document.getElementById("post").onclick = function() {
+		
+		var name = document.getElementById("name").value;
+		var price = document.getElementById("price").value;
+		
+		var request = new XMLHttpRequest();
+		request.open("POST", "/products", true);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		
+		request.send("name="+name+"&price="+price);
+		request.onreadystatechange = function (event) {
+			if(request.readyState == 4) {
+				if(request.status == 200) {
+					document.getElementById("output").value = request.responseText;
+				};
+			};
+		};
+	};
+	document.getElementById("put").onclick = function() {
+		var name = document.getElementById("name").value;
+		var price = document.getElementById("price").value;
+		
+		var request = new XMLHttpRequest();
+		request.open("PUT", "/products/0", true);
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		request.send("name="+name+"&price="+price);
+		request.onreadystatechange = function(event) {
+			if(request.readyState == 4 ) {
+				if(request.status == 200 ) {
+					document.getElementById("output").value = request.responseText;
+				};
+			};
+		};
+	};
+	document.getElementById("delete").onclick = function() {
+		var request = new XMLHttpRequest();
+		request.open("DELETE", "/products/0", true);
+		request.send();
+		request.onreadystatechange = function(event) {
+			if(request.readyState == 4) {
+				if(request.status == 200) {
+					document.getElementById("output").value = request.responseText;
+				}
+			}
+		}
+	};
+};
+</script>
+
+<button id="get">GET</button>
+<button id="post">post</button>
+<button id="put">put</button>
+<button id="delete">DELETE</button>
+<h1>input</h1>
+<input id="name">
+<input id="price">
+<h1>output</h1>
+<textarea id="output" disabled="disabled" cols="40" rows="5"></textarea>
+</body>
+</html>

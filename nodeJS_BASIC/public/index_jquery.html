@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(document).ready(function() {
+		/* $.get("data.html", function(data) {
+			$("body").html(data);
+		});
+		//$("body").load("/data.html"); 위의 겟 방식과 동일한 결과
+		
+		$.getJSON("/data.json", function(data) {
+			$.each(data, function(key, value) {
+				$("body").append("<h1>" + value.name + ":" + value.price + "</h1>");
+			});
+		});
+		
+		$.ajax({
+			url: "data.xml",
+			success: function(data) {
+				$(data).find("product").each(function() {
+					var name = $(this).find("name").text();
+					var price = $(this).find("price").text();
+					
+					$("<h1></h1>").text(name + " : " + price).appendTo("body");
+				});
+			}
+		}); */
+		
+		$("#get").click(function() {
+			$.ajax({
+				url: "/products",
+				type: "get",
+				dataType: "text",
+				success: function(data) {
+					$("#output").val(data);
+				}
+			});
+		});
+		$("#post").click(function() {
+			$.ajax({
+				url: "/products",
+				type: "post",
+				dataType: "text",
+				data: {
+					name : $("#name").val(),
+					price : $("#price").val()
+				},
+				success: function(data) {
+					$("#output").val(data);
+				}
+			});
+		});
+		$("#put").click(function() {
+			$.ajax({
+				url: "/products/0",
+				type: "put",
+				dataType: "text",
+				data: {
+					name: $("#name").val(),
+					price: $("#price").val()
+				},
+				success: function(data) {
+					$("#output").val(data);
+				}
+			});
+		});
+		$("#delete").click(function() {
+			$.ajax({
+				url: "/products/0",
+				type: "delete",
+				dataType: "text",
+				success: function(data) {
+					$("#output").val(data);
+				}
+			})
+		});
+	});
+</script>
+</head>
+<body>
+<button id="get">GET</button>
+<button id="post">post</button>
+<button id="put">put</button>
+<button id="delete">delete</button>
+<h1>input</h1>
+<input id="name">
+<input id="price">
+<h1>output</h1>
+<textarea id="output" disabled="disabled" cols="40" rows="5"></textarea>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+$(document).ready(function() {
+	$(document).ajaxComplete(function() {
+		$("#ajax-event").append("<h1>AjaxComplete</h1>")
+	}).ajaxError(function() {
+		$("#ajax-event").append("<h1>AjaxError</h1")
+	}).ajaxSend(function () {
+		$("#ajax-event").append("<h1>AjaxSend</h1>")
+	}).ajaxSuccess(function() {
+		$("#ajax-event").append("<h1>AjaxSuccess</h1>")
+	}).ajaxStart(function() {
+		$("#ajax-event").append("<h1>AjaxStart</h1>")
+	});
+	
+	$("#wrap").load("data.json");
+	
+});
+</script>
+</head>
+<body>
+<div id="ajax-event"></div>
+<div id="wrap"></div>
+</body>
+</html>

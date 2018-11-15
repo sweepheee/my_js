@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var data = {
+			name : "RintIanTta",
+			region : "Seoul",
+		};
+		
+		$("<h1></h1>").text($.param(data)).appendTo("body");
+		
+		$("#my-form").submit(function(event) {
+			var name = $("#name").val();
+			var region = $("#region").val();
+			
+			// 보조메서드 첫번째 방법 비추
+			var url = "/parameter?name=" + name + "&region=" + region;
+			$("#wrap").load(url);
+			
+			// 보조메서드 두번째 방법 비추
+			/* var url = "/parameter";
+			var data = {name : name, region: region};
+			var params = $.param(data);
+			$("#wrap").load(url, params); */
+			
+			// 세번째 추천 쿼리문자열리턴 ex) name=rintiantta&region=seoul
+			//$("#wrap").load("/parameter", $(this).serialize());	이 경우 파라미터값 알아서 찾아서 쿼리문자열로 바꿈.		
+			
+			// 네번째 방법 추천 배열로 리턴 ex) [object Object], [object Object]
+			//$("#wrap").load("/parameter", $(this).serializeArray());
+			
+			event.preventDefault(); // 기본 이벤트를 제거
+		});
+	});
+</script>
+</head>
+<body>
+<form id="my-form">
+	<table>
+		<tr>
+			<td><label for="name">Name</label></td>
+			<td><input id="name" name="name" type="text"></td>
+		</tr>
+		<tr>
+			<td><label for="region">Region</label></td>
+			<td><input id="region" name="region" type="text"></td>
+		</tr>
+	</table>
+	<input type="submit" value="Get Ajax String">
+</form>
+<div id="wrap">
+</div>
+</body>
+</html>
