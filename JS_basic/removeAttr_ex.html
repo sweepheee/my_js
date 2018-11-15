@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("h1").removeAttr("asd"); // 속성안에 아무거나 다 넣어짐 보통 data-땡땡 형식으로 많이 쓰는듯?
+        })
+    </script>
+</head>
+<body>
+    <h1 asd="first">header-0</h1>  
+    <h1 asd="second">header-1</h1>
+    <h1 asd="third">header-2</h1>
+
+</body>
+</html>

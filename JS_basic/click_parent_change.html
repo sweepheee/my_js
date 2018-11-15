@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('button').click(function() {
+                $(this).text("비활성하기");
+                $(this).parent().css("background", "red");
+                $(this).parent().find("span").text("활성화");
+            });
+        })
+    </script>
+</head>
+<body>
+<div>
+<span>비활성화</span>
+<button>활성화하기</button>
+</div>    
+<div>
+    <span>비활성화</span>
+    <button>활성화하기</button>
+</div>
+</body>
+</html>

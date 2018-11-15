@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        window.onload=function() {
+            var headers = document.getElementsByTagName("h1");
+
+            for(var i =0; i<headers.length; i++) {
+                if(i==0) {
+                    headers[i].innerHTML = "1등";
+                }else if(i==1) {
+                    headers[i].innerHTML = "2등"
+                }else {
+                    headers[i].innerHTML = "3등부터는 기록집계까 안됩"
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>가나다라</h1>
+    <h1>가낟</h1>
+    <h1>ㄹㄷㄹㄷㄹ</h1>
+</body>
+</html>

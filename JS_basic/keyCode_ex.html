@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+</head>
+<body onkeydown='on_key_down()'>
+        아무 키나 입력해보세요.
+        <br>char <input type='text' id='keychar' />
+        <br>keycode <input type='text' id='keycode' />
+        <br>Alt키 <input type='checkbox' id='altkey' />
+        <br>Ctrl키 <input type='checkbox' id='ctrlkey' />
+        <br>Shift키 <input type='checkbox' id='shiftkey' />
+        </body>
+        
+        <script>
+        function on_key_down() {
+            var keycode = event.keyCode;
+            if ( keycode == 8 // 백스페이스 
+                || keycode == 116 // F5 
+                ) event.returnValue = false; // 브라우저 기능 키 무효화
+            document.getElementById('keychar').value = String.fromCharCode( keycode );
+            document.getElementById('keycode').value = keycode;
+            document.getElementById('altkey').checked = event.altKey;
+            document.getElementById('ctrlkey').checked = event.ctrlKey;
+            document.getElementById('shiftkey').checked = event.shiftKey;
+        }	
+        </script>
+</body>
+</html>

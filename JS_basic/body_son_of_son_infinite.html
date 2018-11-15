@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('body *').css('color', 'red'); //후손 선택. 즉 body 밑의 모든 요소 선택해서 레드로해라.
+        });
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li>Apple</li>
+        <li>Bag</li>
+        <li>Cat</li>
+        <li>Dog</li>
+        <li>Elephant</li>
+    </ul>    
+</div>    
+</body>
+</html>

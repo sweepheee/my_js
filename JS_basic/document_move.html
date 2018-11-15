@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("img").css("width", 250);
+
+            setInterval(function() {
+                $("img").first().appendTo("body");
+            }, 2000);
+        });
+    </script>
+
+</head>
+<body>
+    <img src="1_.gif">
+    <img src="2_.gif">
+    <img src="3_.gif">
+    <img src="4_.gif">
+    <img src="5_.png">
+</body>
+</html>

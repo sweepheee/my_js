@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        var object = {
+            이름 : "전승희",
+            지역 : "부산"
+        }
+        //JSON.parse는 JSON 문자열을 JSON 객체로 바꾸는 것이므로 아래 예제에선 JSON파스(JSON스트링화)로 예시를 들어본 것.
+        var copy = JSON.parse(JSON.stringify(object));
+
+        alert(copy.이름 + " : " + copy.지역)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+
+        //1번
+        var array = {
+            이름 : "Nature of Code",
+            가격 : "30000원",
+            저자 : "다니엘쉬프만",
+            ISBN : 9788068481901,
+            페이지수 : "620페이지"
+        }
+
+        alert("속성    값\n"+"이름     "+array.이름+"\n가격     "+ array.가격+"\n저자     "+array.저자+"\nISBN     "+array.ISBN+"\n페이지수     "+array.페이지수);
+    
+        
+        
+        //2번
+        var sc2 = [];
+
+        function sc2make(name, min, gas, supply) {
+            var willReturn = {
+                이름 : name,
+                미네랄 : min,
+                가스 : gas,
+                보급품 : supply,
+                toString : function() {
+                    return this.이름+"          "+this.미네랄+"          "+this.가스+"          "+this.보급품;
+                }
+            };
+            return willReturn;
+        }
+        
+        var sc2 = [];
+
+        sc2.push(sc2make("일벌레", 50, 0,1));
+        sc2.push(sc2make("여왕", 150, 0, 2));
+        sc2.push(sc2make("바퀴", 75, 25, 2));
+        sc2.push(sc2make("히드라리스크", 100, 50, 2));
+        sc2.push(sc2make("타락귀", 150, 100, 2));
+
+        var output = "이름(name)          미네랄(min)          가스(gas)          보급품(supply)\n";
+        for(var i in sc2) {
+            output += sc2[i].toString() + '\n';
+        }
+
+        alert(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            var array = [
+                { name: 'Hanbit Media', link: "http://hanbit.co.kr"},
+                { name: 'Naver', link : "http://www.naver.com"},
+                { name: 'Daum', link : "http://www.daum.net"}
+            ];
+            $.each(array, function(index, item) {
+                var output = "";
+
+                output += "<a href='" + item.link + "'>";
+                output += "<h1>" + item.name + "</h1>";
+                output += "</a>";
+
+                document.body.innerHTML += output;
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        window.onload = function() {
+            var header1 = document.querySelector("#header-1");
+            var header2 = document.querySelector("#header-2");
+            var header3 = document.querySelector(".header-3");
+
+            header1.innerHTML = "1번선택";
+            header2.innerHTML = "2번선택";
+            header3.innerHTML = "3번선택클래스";
+        }
+    </script>
+</head>
+<body>
+<h1 id="header-1"></h1>
+<h1 id="header-2"></h1>
+<h1 class="header-3"></h1>
+</body>
+</html>

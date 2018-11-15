@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            var h1 = "<h1>header</h1>";
+            var h2 = "<h1>header2</h1>";
+
+            $("body").append(h1, h2, h1, h2);
+
+
+            var content = [ 
+                {name: "윤인성", region: "서울특별시"},
+                {name: "윤하린", region: "서울특별시"},
+                {name: "윤인아", region: "미국"}
+            ];
+
+            $("div").append(function (index) {
+                var item = content[index];
+                var output = "";
+                output += "<h1>" + item.name + "</h1>";
+                output += "<h2>" + item.region + "</h2>";
+
+                return output;
+            });
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

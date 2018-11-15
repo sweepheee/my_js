@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+    function clone(obj) {
+        var output = {};
+        for(var i in obj) {
+            output[i] = obj[i];
+        }
+        return output;
+    }
+
+    var original = {a:10, b: 20}; //원본
+    var referenced = original; //얕은 복사
+    var cloned = clone(original) //깊은 복사 객체
+
+    original.a = 20; // 원본 값 변경
+
+    alert(JSON.stringify(referenced, null, 1)); // 참조할값, String혹은 Number혹은 null, 공백갯수(즉 스페이스)
+    alert(JSON.stringify(cloned, null, 1));
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

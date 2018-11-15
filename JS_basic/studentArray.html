@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <script>
+        var student = [];
+        student.push({ 이름:"윤인성", 국어:80, 수학:33, 영어:22, 과학:11 });
+        student.push({ 이름:"연하진", 국어:90, 수학:12, 영어:11, 과학:99 });
+        student.push({ 이름:"구지연", 국어:100, 수학:99, 영어:33, 과학:88 });
+        student.push({ 이름:"나선주", 국어:52, 수학:88, 영어:44, 과학:77 });
+        student.push({ 이름:"윤아린", 국어:40, 수학:77, 영어:55, 과학:66 });
+        student.push({ 이름:"윤명월", 국어:50, 수학:66, 영어:66, 과학:55 });
+        student.push({ 이름:"김미화", 국어:80, 수학:55, 영어:77, 과학:44 });
+        student.push({ 이름:"김연화", 국어:32, 수학:45, 영어:88, 과학:33 });
+        student.push({ 이름:"박아현", 국어:45, 수학:33, 영어:99, 과학:22 });
+        student.push({ 이름:"서준서", 국어:55, 수학:22, 영어:11, 과학:11 });
+
+        for (var i in student) {
+            student[i].getSum = function() {
+                return this.국어 + this.수학 + this.영어 + this.과학;
+            };
+
+            student[i].getAverage = function() {
+                return this.getSum()/4;
+            };
+        }
+
+        var output = '이름\t총점\t평균\n';
+        for(var i in student) {
+            with(student[i]) {
+                output += 이름 + ":" + getSum() + "\t" + getAverage() + '\n';
+            }
+        }
+
+        alert(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

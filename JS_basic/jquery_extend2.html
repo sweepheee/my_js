@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+
+        //객체에 같은 요소가 있을 경우 뒤에 나오는게 앞에껄 덮어쓴다. a가 뒤에 있는 a로 덮어씌워졌다.
+        var object = $.extend({a : 10}, {a:20, b : 20}, {c : 20});
+
+        alert(JSON.stringify(object));
+
+        function test(options) {
+            options = $.extend({
+                valueA: 10,
+                valueB: 20,
+                valueC: 30 //여기까지가 기본으로 주어진 값.
+            }, options); //여기가 매개변수로 들어온 값. 즉 매개변수가 기본값을 덮었다.
+            
+            alert(options.valueA + " : " +options.valueB + " : " + options.valueC);
+        }
+        
+        test({
+            valueA: 52,
+            valueC: 273
+        }); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function test() {
+            try {
+                alert("A 위치입니다.");
+                return;
+            }catch(exepction) {
+                alert("B위치입니다.");
+                return;
+            }finally { //finally가 없이 alert C가 있으면 위에서 return이 발동됐을경우 c는 발동하지 않는다. 
+
+                alert("C위치입니다.");
+            }
+        }
+        test();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

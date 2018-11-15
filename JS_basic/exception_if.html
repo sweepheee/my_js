@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function divide(alpha, beta) {
+            if(beta == 0 ) {
+                throw 'DivideByZeroException';
+            }else {
+                return alpha / beta;
+            }
+        }
+
+        try {
+            divide(10, 0);
+        }catch (exception) {
+            alert("catch");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

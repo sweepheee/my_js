@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this._width = width;          // 변수앞에 _를붙이는건 자신이외에 다른 개발자가 절대 손대지말라 표시하는 것.
+                this._height = height;
+            }
+
+            get width() {
+                return this._width;
+            }
+
+            set width(input) {
+                this._width = input;
+            }
+
+            get height() {
+                return this._height;
+            }
+
+            set height(input) {
+                this._height = input;
+            }
+
+            getArea() {
+                return this._width * this._height;
+            }
+            
+        }
+
+        class Square extends Rectangle {
+            constructor(length) {
+                super(length, length);
+                alert(this);
+            }
+
+            set width(input) {
+                this._width=input;
+            }
+            set height(input) {
+                this._width = input;
+                this._height= input;
+            }
+
+        }
+
+        const square = new Square(100);
+        alert(square.getArea());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

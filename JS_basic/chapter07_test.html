@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function Product(name, weight, price) {
+            this.name = name;
+            this.weight = weight;
+            this.price = price;
+
+            this.calculate = function(gram) {
+                return (gram/this.weight) * this.price + "원";
+            }
+        }
+
+        var product = new Product("돼지삼겹살", 100, 1690);
+        alert(product.calculate(200));
+
+        let number = 273;
+
+        number.print = function() {
+            console.log(this);
+        }
+
+        number.print();
+        number.print();
+        number.print();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

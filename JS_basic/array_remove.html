@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        Array.prototype.remove = function(index) { this.splice(index, 1);}
+
+        var array = [52,273,103,32,274,129];
+        
+        //앞에서부터 지우면 배열이 하나씩 당겨지면서 체크하지않고 넘어가버리게 되는 인덱스가 존재한다. 그래서 역순으로 체크해준다.
+        for (var i = array.length-1; i>=0; i--) {
+            if(array[i]>100) {
+                array.remove(i);
+            }
+        }
+
+        alert(array);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

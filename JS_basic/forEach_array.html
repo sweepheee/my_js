@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+    var array = [1,2,3,4,5,6,7,8,9,10];
+
+    var sum = 0;
+    var output = "";
+    array.forEach(function (elements, index, array) { // 펑션에 array는 빼도 된다.
+        sum += elements;
+        output += index + ":" + elements + "->" + sum + "\n";
+    });
+    alert(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

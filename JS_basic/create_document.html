@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("<h1></h1>").html("hello world").appendTo(".asd");
+            //$("<h1>hello world</h1>").appendTo(".asd") 도 사용 가능.
+            $("<img />").attr("src", "dott01.png").appendTo(".asd");
+            $("<img />" , {
+                src : "dott01.png",
+                width: 300,
+                height: 250
+            }).appendTo(".asd");
+        })
+    </script>
+</head>
+<body>
+    <div class="asd"></div>
+</body>
+</html>

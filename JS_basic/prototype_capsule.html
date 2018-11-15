@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function Rectangle(w, h) {
+        var width =w;
+        var height = h;
+
+        this.getWidth = function() {return width;}
+        this.getHeight = function() {return height;}
+        this.setWidth = function(w) {
+            if(w < 0 ) {
+                throw '길이는 음수일 수 없습니다.';
+            }else {
+                width = w;
+            }
+        }
+        this.setHeight = function(h) {
+            if(h < 0 ) {
+                throw '길이는 음수일 수 없습니다.';
+            }else {
+                height = h;
+            }
+        }
+    }
+
+    Rectangle.prototype.getArea = function() {
+        return this.getWidth() * this.getHeight();
+    };
+
+    var rectangle = new Rectangle(5,7);
+    rectangle.setWidth(-2);
+
+    alert('AREA:' + rectangle.getArea());
+
+    </script>
+    <script>
+    //Rectangle함수를 상속받는 square를 만들것이다.
+    function Square(length) {
+        this.base = Rectangle;  //base는 임의의 값이다. 아무거나 줘도 가능
+        this.base(length, length); //Rectangle함수의 값에 length 2번 들어가게끔 설정했음.
+    }
+
+    Square.prototype = Rectangle.prototype;
+    Square.prototype.constructor = Square; //없어도 정상작동 된다고 한다.
+
+    var rectangle = new Rectangle(5,7); //프로토타입영역도 공유했다.
+    var square = new Square(5);
+    alert(rectangle.getArea() + " : " + square.getArea());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

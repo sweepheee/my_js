@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            var object = { name : "윤인성" };
+            
+
+            //원래 있던 객체안에 아래의 두가지 요소를 합친다고 한다. 저자의 말로는 깊게팔때는 중요하니 기억하라고함.
+            $.extend(object , {
+                region: "서울특별시 강서구",
+                part : "세컨드 기타"
+            });
+
+            var output ="";
+            $.each(object, function(key, item) {
+                output += key + " : " + item + "\n";
+            })
+            alert(output);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

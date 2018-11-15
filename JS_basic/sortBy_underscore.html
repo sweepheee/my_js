@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="underscore.js"></script>
+    <script>
+        var students = [
+            { 이름 : "윤인성", 국어: 87, 수학: 98, 영어: 88, 과학: 95},
+            { 이름 : "윤인성2", 국어: 87, 수학: 98, 영어: 88, 과학: 90},
+            { 이름 : "윤인성3", 국어: 97, 수학: 98, 영어: 98, 과학: 91},
+            { 이름 : "서준서", 국어: 45, 수학: 52, 영어: 72, 과학: 78}
+        ];
+
+        //과학 오름차순으로 정렬.
+        var sortByScience = _.sortBy(students, function(item) {
+            return item.과학
+        }).slice(0, 4);
+        alert(JSON.stringify(sortByScience, null, 1));
+
+        //평균 오름차순
+        var sortByAverage = _.sortBy(students, function(item) {
+            return (item.국어+item.수학+item.영어+item.과학)/4
+        }).slice(0,4);
+        alert(JSON.stringify(sortByAverage, null, 1));
+        
+        //과학 성적이 가장 높은 학생
+        var scienceTop = _.max(students, function(item) { return item.과학});
+        alert(JSON.stringify(scienceTop, null, 2));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

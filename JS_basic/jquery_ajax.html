@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <style>
+            .move {
+                width: 10000px;
+                height: 10000px;
+                position: absolute;
+            }
+        </style>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+
+            var move = $(".move");
+            alert(move.text());
+            move.css({
+                'background-image' : 'url("1_.gif")',
+                'background-size' : "40px",
+            });
+            var left = 1;
+            var top = -1;
+
+            setInterval(function() {
+                
+                left += 1;
+                top += -1;
+
+                move.css({
+                    'left' : left,
+                    'top' : top,
+                });
+                console.log("변경");
+            }, 1000/30);
+
+        });
+    </script>
+
+</head>
+<body>
+    <div class="move">
+        <div class="movetomove">    
+            MOVE
+        </div>
+    </div>
+</body>
+</html>

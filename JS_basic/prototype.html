@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script>
+        function Student(name, korean, math, english, science) {
+            this.이름 = name;
+            this.국어 = korean;
+            this.수학 = math;
+            this.영어 = english;
+            this.과학 = science;
+        }
+
+        Student.prototype.getSum = function() {
+            return this.국어 + this.영어 + this.과학 + this.수학;
+        }
+        Student.prototype.getAverage = function() {
+            return this.getSum() / 4;
+        }
+        Student.prototype.toString = function() {
+            return this.이름 + "     " + this.getSum() + "     " + this.getAverage();
+        }
+
+        var students = [];
+
+        students.push(new Student("윤하린", 96, 98, 92, 98));
+        students.push(new Student("전승희", 99, 99, 99, 99));
+
+        var output = "";
+        for(var i in students) {
+            output +=students[i].toString();
+        }
+        alert(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
